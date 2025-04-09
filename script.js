@@ -162,3 +162,67 @@ heroPhoto.addEventListener("click", () => {
       modal.style.display = "none";
     }
   });
+
+// Blog Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const blogModals = {
+        'blog-modal': document.getElementById('blog-modal'),
+        'blog-modal-2': document.getElementById('blog-modal-2')
+    };
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    // Function to open blog modal
+    function openBlogModal(e) {
+        const card = e.currentTarget;
+        const modalId = card.classList.contains('blog-card') ? 
+            (card.querySelector('h3').textContent.includes('5 Ways') ? 'blog-modal' : 'blog-modal-2') : 
+            'blog-modal';
+        
+        const modal = blogModals[modalId];
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // Function to close all blog modals
+    function closeAllBlogModals() {
+        Object.values(blogModals).forEach(modal => {
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+        document.body.style.overflow = 'auto';
+    }
+
+    // Add click event to blog cards
+    if (blogCards.length > 0) {
+        blogCards.forEach(card => {
+            card.addEventListener('click', openBlogModal);
+        });
+    }
+
+    // Close modals when clicking close buttons
+    Object.values(blogModals).forEach(modal => {
+        if (modal) {
+            const closeBtn = modal.querySelector('.close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeAllBlogModals);
+            }
+            
+            // Close modal when clicking outside the content
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeAllBlogModals();
+                }
+            });
+        }
+    });
+
+    // Close modal when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeAllBlogModals();
+        }
+    });
+});

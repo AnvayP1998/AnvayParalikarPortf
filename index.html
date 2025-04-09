@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anvay Paralikar | Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-..."
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   
     <!-- Google Analytics -->
@@ -169,6 +168,42 @@
         </div>
     </section>
 
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="project-grid">
+                <div class="project-card blog-card">
+                    <div class="project-info">
+                        <h3>5 Ways GW Students Can Level Up Their Online Presence</h3>
+                        <p class="project-date">By Anvay Paralikar</p>
+                        <p>Being visible online is more important than ever — especially for students building careers in business, tech, or consulting...</p>
+                        <div class="project-tech">
+                            <span>Career Development</span>
+                            <span>Personal Branding</span>
+                            <span>Student Success</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card blog-card">
+                    <div class="project-info">
+                        <h3>Building More Than Code: Lessons from Developing a Secure Financial Onboarding Platform</h3>
+                        <p class="project-date">By Anvay Paralikar</p>
+                        <p>When I first joined Phillip Capital as a Software Engineer, I was tasked with helping design and build an onboarding system for a new client segment operating under strict financial compliance rules...</p>
+                        <div class="project-tech">
+                            <span>Software Engineering</span>
+                            <span>Financial Technology</span>
+                            <span>Compliance</span>
+                        </div>
+                    </div>
+                </div>
+              
+
+              
+            </div>
+        </div>
+    </section>
+
     <section class="skills" id="skills">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
@@ -295,5 +330,54 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Blog Modal -->
+    <div id="blog-modal" class="modal">
+        <div class="blog-modal-content">
+            <span class="close">&times;</span>
+            <p class="blog-header">📄 Title: 5 Ways Us Students Can Level Up Their Online Presence (Without Being a Designer)</p>
+            <p class="blog-author">By Anvay Paralikar</p>
+            <div class="blog-content">
+                <p>Being visible online is more important than ever — especially for students building careers in business, tech, or consulting. But you don't need to be a graphic designer or social media guru to make a strong impression.</p>
+                
+                <p>Here are 5 tools and tips that have worked for me and other GW students:</p>
+                
+                <h3>1. Create a Personal Landing Page</h3>
+                <p>Sites like GitHub Pages or Notion are great for setting up a simple, one-page portfolio. Link your resume, projects, and even fun facts about your GW journey.</p>
+                
+                <h3>2. Design Clean Social Graphics with Canva</h3>
+                <p>From club invites to case comp promos, Canva's free student templates help you stay consistent and branded without starting from scratch.</p>
+                
+                <h3>3. Use LinkedIn for More Than Job Hunting</h3>
+                <p>Post updates about projects, events you attend, or student org wins. Tag GW and your peers to grow your network.</p>
+                
+                <h3>4. Build a Content Calendar (Even if It's Just for You)</h3>
+                <p>Scheduling your posts helps keep your online voice active and professional. I use Google Sheets with simple columns: Date, Topic, Channel, Link.</p>
+                
+                <h3>5. Write Like You Speak (But Spellcheck!)</h3>
+                <p>Authenticity beats perfection. Whether it's a student newsletter blurb or an IG caption, write like you'd talk to a smart friend — and then proofread twice.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Blog Modal -->
+    <div id="blog-modal-2" class="modal">
+        <div class="blog-modal-content">
+            <span class="close">&times;</span>
+            <p class="blog-header">📄 Title: Building More Than Code: Lessons from Developing a Secure Financial Onboarding Platform</p>
+            <p class="blog-author">By Anvay Paralikar</p>
+            <div class="blog-content">
+                <p>When I first joined Phillip Capital as a Software Engineer, I was tasked with helping design and build an onboarding system for a new client segment operating under strict financial compliance rules. It wasn't just about writing efficient code — it was about creating a platform that could instill trust, minimize onboarding time, and remain secure and user-friendly across a highly regulated environment.</p>
+                
+                <p>The project became known internally as the DIFC eKYC Demat Account platform, and I took ownership of its backend development, documentation, and rollout coordination. Using .NET MVC, C#, and MS SQL, I worked closely with product teams and compliance officers to ensure that the platform met both user needs and regulatory standards. One of the biggest challenges was integrating real-time document verification and multi-role access — features that sound simple but demand attention to edge cases, error messaging, and usability.</p>
+                
+                <p>Throughout the development cycle, I collaborated with multiple departments, from QA to UI/UX to management. I also maintained the internal user guides and onboarding instructions, ensuring that each new feature or update came with a clear, readable explanation for both technical and non-technical stakeholders.</p>
+                
+                <p>What I valued most wasn't the technology stack — it was the clarity of communication that made the launch successful. By aligning developers, testers, and support teams with consistent messaging and shared documentation, we were able to roll out a platform that was not only secure, but reliable and intuitive.</p>
+                
+                <p>This project taught me that the most impactful work often comes down to how well you communicate a solution — not just how well you build it.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

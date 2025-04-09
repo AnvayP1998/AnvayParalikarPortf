@@ -430,11 +430,28 @@ nav {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     background-color: var(--card-bg);
+    cursor: pointer;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card .project-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.blog-card .project-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.blog-card .project-tech span {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
 }
 
 .project-info {
@@ -753,4 +770,56 @@ footer {
         font-size: 1.8rem;
       }
 
+}
+
+/* Blog Modal Styles */
+#blog-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+
+.blog-modal-content {
+    background-color: var(--bg-color);
+    margin: 5% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.blog-header {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.blog-content {
+    margin-top: 2rem;
+}
+
+.blog-content h3 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem 0;
+}
+
+.blog-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .blog-modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
 }
