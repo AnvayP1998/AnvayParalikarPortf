@@ -226,3 +226,117 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Add these functions to your existing script.js file
+
+// Photo Gallery Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the photo modal
+    const photoModal = document.getElementById('photo-modal');
+    const photoModalImg = document.getElementById('photo-modal-img');
+    const photoCaption = document.getElementById('photo-caption');
+    const photoCloseBtn = photoModal.querySelector('.close');
+    
+    // Get all gallery images
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    
+    // Function for opening the photo modal
+    function openPhotoModal(e) {
+        photoModal.style.display = 'block';
+        photoModalImg.src = e.target.src;
+        
+        // Get caption information from the overlay
+        const overlay = e.target.nextElementSibling;
+        const title = overlay.querySelector('h3').textContent;
+        const location = overlay.querySelector('p').textContent;
+        photoCaption.innerHTML = `${title} - ${location}`;
+        
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+    
+    // Close the photo modal
+    function closePhotoModal() {
+        photoModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+    
+    // Add click event to all gallery images
+    galleryImages.forEach(img => {
+        img.addEventListener('click', openPhotoModal);
+    });
+    
+    // Close modal when clicking the × button
+    photoCloseBtn.addEventListener('click', closePhotoModal);
+    
+    // Close modal when clicking outside the image
+    photoModal.addEventListener('click', function(e) {
+        if (e.target === photoModal) {
+            closePhotoModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && photoModal.style.display === 'block') {
+            closePhotoModal();
+        }
+    });
+    
+    // Photo Filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            galleryImages.forEach(img => {
+                const photoItem = img.parentElement;
+                const category = img.getAttribute('data-category');
+                
+                if (filterValue === 'all' || filterValue === category) {
+                    photoItem.style.display = 'block';
+                    // Add a small animation for showing items
+                    photoItem.style.opacity = '0';
+                    setTimeout(() => {
+                        photoItem.style.opacity = '1';
+                    }, 50);
+                } else {
+                    photoItem.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+// Make gallery items reveal on scroll (optional animation)
+window.addEventListener('scroll', function() {
+    const photoItems = document.querySelectorAll('.photo-item');
+    
+    photoItems.forEach(item => {
+        const itemPosition = item.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if (itemPosition < screenPosition) {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+// Initialize photo items with initial style for scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    const photoItems = document.querySelectorAll('.photo-item');
+    
+    photoItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        // Add delay for staggered animation
+        item.style.transitionDelay = `${index * 0.1}s`;
+    });
+});

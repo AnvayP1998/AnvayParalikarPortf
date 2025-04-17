@@ -29,6 +29,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
+                    <li><a href="#photography">Photography</a></li>
                     <li><a href="#contact">Contact</a></li>
                    
                 </ul>
@@ -306,6 +307,70 @@
         </div>
     </section>
 
+    <section class="photography" id="photography">
+        <div class="container">
+            <h2 class="section-title">Photography</h2>
+            <p class="section-description">A selection of my favorite captures from around the world.</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0002.jpg" alt="Cityscape at sunset" class="gallery-img" data-category="Cityscape">
+                 
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0020.jpg" alt="Mountain landscape" class="gallery-img" data-category="Nature">
+                 
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0006.jpg" alt="Urban architecture" class="gallery-img" data-category="Architecture">
+                  
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0011.jpg" alt="Portrait photography" class="gallery-img" data-category="Portrait">
+                  
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0013.jpg" alt="Black and white street scene" class="gallery-img" data-category="Street">
+                  
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0017.jpg" alt="Macro photography of flowers" class="gallery-img" data-category="Macro">
+                   
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0040.jpg" alt="Macro photography of flowers" class="gallery-img" data-category="Macro">
+                   
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0038.jpg" alt="Macro photography of flowers" class="gallery-img" data-category="Macro">
+                   
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0032.jpg" alt="Macro photography of flowers" class="gallery-img" data-category="Macro">
+                   
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0029.jpg" alt="Macro photography of flowers" class="gallery-img" data-category="Macro">
+                   
+                </div>
+                <div class="photo-item">
+                    <img src="Saved Pictures/IMG-20250417-WA0036.jpg" alt="Macro photography of flowers" class="gallery-img" data-category="Macro">
+                   
+                </div>
+            </div>
+            
+            <div class="photo-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Cityscape">Cityscapes</button>
+                <button class="filter-btn" data-filter="Nature">Nature</button>
+                <button class="filter-btn" data-filter="Architecture">Architecture</button>
+                <button class="filter-btn" data-filter="Portrait">Portraits</button>
+                <button class="filter-btn" data-filter="Street">Street</button>
+                <button class="filter-btn" data-filter="Macro">Macro</button>
+            </div>
+        </div>
+    </section>
+    
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -412,6 +477,12 @@
                 <p>This project taught me that the most impactful work often comes down to how well you communicate a solution — not just how well you build it.</p>
             </div>
         </div>
+    </div>
+
+    <div id="photo-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="photo-modal-img">
+        <div id="photo-caption"></div>
     </div>
 </body>
 </html>
